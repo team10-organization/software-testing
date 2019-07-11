@@ -29,6 +29,8 @@ public class UpperCaseCounterTest {
         int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
         assertThat(result, is(0));
 
+        System.out.println("result :: " + result);
+
     }
 
     //대문자들이 포함된 문자열을 전달했을 때 카운팅된 숫자와 맞는지 검증하는 테스트 작성
