@@ -8,6 +8,7 @@ import java.util.Optional;
 
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 public class ChampionTest {
@@ -35,21 +36,23 @@ public class ChampionTest {
     @Test
     public void givenCollectionWhenEmptyCorrect() {
         List<String> emptyList = new ArrayList<>();
-//        assertThat(emptyList, empty());
+        assertThat(emptyList, is(empty())); //by 오세훈, assertThat과 is 사용
     }
 
     //notNullValue 활용한 테스트
     @Test
     public void notNullCheck() {
         String lck = "LCK";
-//        assertThat(lck, notNullValue());
+        assertThat(lck, notNullValue());
+        assertSame(lck, "LCK"); //by 오세훈, assertSame을 사용해서 Test
     }
 
     //nullValue 활용한 테스트
     @Test
     public void givenStringWhenNullIsCorrect() {
         String lck = null;
-//        assertThat(lck, nullValue());
+        assertThat(lck, nullValue());
+        assertThat(lck, not(notNullValue())); //by 오세훈 not 과 notNullValue를 사용해서 Test
     }
 
 
@@ -60,20 +63,24 @@ public class ChampionTest {
         String sampleString2 = "Player point";
         String startString = "Player";
         String endString = "point";
-//        assertThat(sampleString1, anyOf(startsWith(startString), containsString(endString)));
-//        assertThat(sampleString2, is(endsWith(endString)));
+        assertThat(sampleString1, anyOf(startsWith(startString), containsString(endString)));
+        assertThat(sampleString2, is(endsWith(endString)));
+        assertThat(sampleString1, equalToIgnoringCase("player focus")); //by 오세훈 equalToIgnoringCase로 대소문자 구분없이 Test
     }
 
     //부동소수점 범위 closeTo 테스트
     @Test
     public void testForFloatingPoint() {
-//        assertThat(3.14, closeTo(3, 0.2));
+        assertThat(3.14, closeTo(3, 0.2));
+        assertThat(3.14, greaterThan(3.13)); //by 오세훈 greaterThan 으로 3.13 보다 큰지 Test
+
     }
 
     //anything 테스트
     @Test
     public void shouldNotErrorGetReference() {
-//        assertThat(championList.get(2), anything());
+        assertThat(championList.get(2), anything());
+        assertThat(championList.get(2).getName(), hasToString("아지르")); //by 오세훈 hasToString으로 아지르라는 String을 가지고 있는지 비교
     }
 
     //객체 크기 검증 테스트 hasSize
