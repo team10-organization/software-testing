@@ -15,7 +15,10 @@ public class UpperCaseCounterTest {
     public void getNumberOfUpperCaseCharactersInString_return_0_for_null_input(){
         String str = null;
 
-//        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        assertThat(result, is(0));
+
+        System.out.println("result :: " + result);
     }
 
     //반겂울 전달했을 때 0을 리턴하는지에 대한 테스트 작성
@@ -23,7 +26,9 @@ public class UpperCaseCounterTest {
     public void getNumberOfUpperCaseCharactersInString_return_0_for_empty_input() {
         String str = "";
 
-//        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        assertThat(result, is(0));
+
     }
 
     //대문자들이 포함된 문자열을 전달했을 때 카운팅된 숫자와 맞는지 검증하는 테스트 작성
@@ -31,7 +36,8 @@ public class UpperCaseCounterTest {
     public void getNumberOfUpperCaseCharactersInString_return_10_for_ABCDEFGHIJ() {
         String str = "ABCDEFGHIJ";
 
-        int numberOfUpperCaseCharactersInString = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+        int result = upperCaseCounter.getNumberOfUpperCaseCharactersInString(str);
+
 
         //assertTrue로 맞는 테스트 코드 작성
         //assertFalse로 틀리는 값을 넣어 테스트 작성
