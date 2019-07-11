@@ -43,8 +43,9 @@ public class CustomCalculatorTest {
     @Test
     public void divide() {
         customCalculator = new CustomCalculator();
-        int result = customCalculator.divide(25,5);
+        int result = customCalculator.divide(169,13);
         /* 이곳에 테스트 코드를 작성하세요. */
-        System.out.println("result :: " + result);
+        assertTrue(result == 13); //changed by 마성호
+        System.out.println("The result is " + result);
     }
 }
