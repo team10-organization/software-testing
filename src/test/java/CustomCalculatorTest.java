@@ -33,9 +33,10 @@ public class CustomCalculatorTest {
     @Test
     public void multiply() {
         customCalculator = new CustomCalculator();
-        int result = customCalculator.multiply(5,9);
+        int result = customCalculator.multiply(67, 645);
         /* 이곳에 테스트 코드를 작성하세요. */
-        System.out.println("result :: " + result);
+        assertThat(result, is(43215)); // changed by 마성호
+        System.out.println("The result is " + result);
     }
 
     //나누기 테스트 작성
