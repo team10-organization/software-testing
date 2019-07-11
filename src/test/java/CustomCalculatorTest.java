@@ -13,8 +13,9 @@ public class CustomCalculatorTest {
     @Test
     public void add() {
         customCalculator = new CustomCalculator();
-        int result = customCalculator.add(10,15);
+        int result = customCalculator.add(473,684);
         /* 이곳에 테스트 코드를 작성하세요. */
+        assertThat(result, is(1157));
         System.out.println("result :: " + result);
     }
 
